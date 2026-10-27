@@ -4,6 +4,8 @@ Mục tiêu: mọi game mới đều **cùng engine, cùng giao diện, cùng lu
 (nội dung) + chuẩn bị `media/`; mọi thứ còn lại do `tools/build_game.py` lo. **Không sửa `engine/engine.html`
 trừ khi người dùng yêu cầu đổi tính năng cho mọi game.**
 
+> **Nguyên tắc nội dung:** cách làm (giao diện, luật chấm, quy trình) giữ nguyên; **toàn bộ nội dung** (tiêu đề, câu hỏi, đáp án, giải thích, bài đọc, ảnh, audio, mốc nghe, khung từ) chỉ lấy từ file đề MỚI. `examples/unit3_test` chỉ là mẫu về định dạng — tuyệt đối không copy chữ, ảnh, audio hay cách đặt tên phần của nó sang game mới.
+
 ## 1. Mặc định cố định (không cần người dùng nhắc lại)
 
 | Hạng mục | Quy định |

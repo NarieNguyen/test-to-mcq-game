@@ -12,6 +12,8 @@ game-kit/
   docs/GAME_SPEC.md         ← đặc tả + mặc định + công thức quy dạng bài về trắc nghiệm + checklist QC
   BRIEF_TEMPLATE.md         ← mẫu yêu cầu gửi AI
   examples/unit3_test/      ← game.json + media + file game đã build (mẫu chuẩn)
+  docs/PIPELINE_PDF_AUDIO.md← quy trình làm từ PDF ảnh + audio rời (đã dùng cho GS3 Unit 7–10)
+  workflow/                 ← common.py (crop/grid/quad/Q/place), asr.py (chép audio thô), sheet.py (ảnh ghép xem), examples/ (2 generator mẫu)
 ```
 
 ## Dùng nhanh

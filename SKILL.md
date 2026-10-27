@@ -30,6 +30,30 @@ Khi người dùng chỉ cần nhắn ngắn gọn:
    - Nén ảnh sang WebP ($\le 900px, quality 82$).
    - Nhúng audio MP3 Base64 và ráp vào `engine.html`.
    - Sinh ra **1 FILE HTML DUY NHẤT** (All-in-One).
+4. **Nguyên tắc nội dung**: Cách làm (giao diện, luật chấm, quy trình) giữ nguyên chuẩn `game-kit`; nhưng **toàn bộ nội dung** (tiêu đề, câu hỏi, đáp án, giải thích, bài đọc, ảnh, audio, mốc nghe) **chỉ lấy từ file đề mới được giao**. Ví dụ mẫu `unit3_test` chỉ để tham khảo cấu trúc định dạng, tuyệt đối không sao chép nội dung câu hỏi sang đề mới.
+
+---
+
+## 🛠️ WORKFLOW CHUYÊN DỤNG CHO ĐỀ PDF TOÀN ẢNH & AUDIO RỜI
+
+Khi người dùng gửi **đề dạng PDF toàn ảnh scan/chụp** + **file nghe rời**:
+👉 Xem chi tiết tại [game-kit/docs/PIPELINE_PDF_AUDIO.md](file:///c:/Users/Admin/Downloads/Game/game-kit/docs/PIPELINE_PDF_AUDIO.md) và sử dụng bộ công cụ hỗ trợ tại `game-kit/workflow/`:
+
+1. **Xuất các trang PDF ra ảnh độ phân giải cao**:
+   - `pdftoppm -r 100 -png de.pdf $WORK/pages/p` (xem nội dung & toạ độ 100dpi)
+   - `pdftoppm -r 200 -png de.pdf $WORK/hi/p` (cắt ảnh sắc nét gấp đôi)
+2. **Phân tích Audio**:
+   - Chạy `python workflow/asr.py '*Part_4*.mp3'` hoặc `build_game.py --suggest-marks` để lấy bản chép lời thô và mốc giây.
+   - Mục nào chưa chắc chắn, ghi lại danh sách để người dùng nghe xác nhận.
+3. **Viết script generator tự động với `game-kit/workflow/common.py`** (tham khảo `workflow/examples/mk_unit_mau.py`):
+   - `u.crop(trang, (x0, y0, x1, y1), 'ten')`: cắt ảnh câu hỏi/bài đọc.
+   - `u.grid(trang, [box...], 'ten', cols=3)`: ghép nhiều ô tranh nhỏ thành 1 ảnh lưới.
+   - `u.quad(trang, y0, y1, x0, x1, 'ten')`: ghép hàng 4 tranh nhỏ thành lưới 2×2 cho bài "odd one out".
+   - `u.audio('*Part_4*.mp3', 'part4')`: chuẩn hoá audio mono 64k.
+   - `place(dung, [sai...])`: tự động xáo trộn và phân bổ đều đáp án đúng vào A, B, C, D (~25%).
+   - `u.save({'sections': sec})`: tự động xuất file `game.json` chuẩn schema.
+4. **Thẩm định thị giác với `workflow/sheet.py`**:
+   - Chạy `python workflow/sheet.py <Unit> 1 3 4 5 8 10 12` để tạo ảnh ghép toàn diện các phần thi, duyệt trực quan đảm bảo không lỗi cắt tranh, không lộ đáp án.
 
 ---
 

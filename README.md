@@ -52,6 +52,23 @@ python game-kit/tools/build_game.py game.json -o Game_TA4_Unit4_Test.html
 cd game-kit/tools && npm i && node test_game.js ../../Game_TA4_Unit4_Test.html
 ```
 
+### 3. Pipeline xử lý Đề PDF ảnh + Audio rời (`game-kit/workflow/`)
+Khi xử lý đề dạng PDF toàn ảnh kèm các đoạn audio nghe:
+```bash
+# 1. Trích xuất trang PDF (xem ở 100dpi, cắt ở 200dpi)
+pdftoppm -r 100 -png de.pdf work/pages/p
+pdftoppm -r 200 -png de.pdf work/hi/p
+
+# 2. Phân tích audio thô & mốc thời gian
+python game-kit/workflow/asr.py '*Part_4*.mp3'
+
+# 3. Chạy script generator tự động sinh game.json & cắt ảnh media
+python work/mk_unit.py
+
+# 4. Ghép ảnh thẩm định thị giác các phần
+python game-kit/workflow/sheet.py <Unit_Number> 1 3 4 5 8 10 12
+```
+
 ---
 
 ## 📂 Cấu Trúc Thư Mục
@@ -69,7 +86,13 @@ test-to-mcq-game/
     │   ├── preview.py       # Chụp ảnh viewport di động Playwright
     │   └── package.json
     ├── docs/
-    │   └── GAME_SPEC.md     # Đặc tả kỹ thuật, schema game.json & quy đổi bài tập
+    │   ├── GAME_SPEC.md     # Đặc tả kỹ thuật, schema game.json & quy đổi bài tập
+    │   └── PIPELINE_PDF_AUDIO.md # Pipeline chuẩn từ đề PDF ảnh + audio rời
+    ├── workflow/
+    │   ├── common.py        # Module hỗ trợ: crop, grid, quad, Q, place, Unit
+    │   ├── asr.py           # Phân tích audio thô & bắt mốc thời gian
+    │   ├── sheet.py         # Ghép ảnh các phần thi để kiểm tra thị giác
+    │   └── examples/        # Script generator mẫu (mk_unit_mau.py, mk_unit_mau_2.py)
     ├── BRIEF_TEMPLATE.md    # Mẫu yêu cầu gửi đề
     └── examples/
         └── unit3_test/      # Mẫu chuẩn vàng (game.json + media + HTML)

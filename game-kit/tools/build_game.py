@@ -12,11 +12,6 @@ Thoát với mã khác 0 nếu có LỖI (không được giao file khi còn l�
 """
 import argparse, base64, hashlib, html, io, json, os, re, shutil, subprocess, sys, unicodedata
 
-if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8")
-if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8")
-
 HERE = os.path.dirname(os.path.abspath(__file__))
 ENGINE = os.path.join(HERE, "..", "engine", "engine.html")
 ANS_SALT = "wtg_v2_2026"          # PHẢI trùng với engine.html
