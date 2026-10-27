@@ -316,7 +316,11 @@ def build(cfg_path, out_path, optimize):
         eng = eng.replace(k, v)
     open(out_path, "w", encoding="utf-8").write(eng)
 
-    print("✔ %s — %d phần, %d câu, %d file media, %.1f MB" % (out_path, len(out["sections"]), total, len(media.map), os.path.getsize(out_path) / 1e6))
+    sz = os.path.getsize(out_path)
+    if sz > 3_000_000:
+        WARN.append("File game nặng %.1f MB (> 3.0 MB). Hãy kiểm tra xem có file audio WAV thô nào chưa được nén sang MP3 không!" % (sz / 1e6))
+
+    print("✔ %s — %d phần, %d câu, %d file media, %.1f MB" % (out_path, len(out["sections"]), total, len(media.map), sz / 1e6))
     return out_path
 
 

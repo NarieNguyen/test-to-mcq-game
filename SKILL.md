@@ -18,19 +18,25 @@ Khi người dùng chỉ cần nhắn ngắn gọn:
 ---
 
 ## ⚡ NGUYÊN TẮC CỐT LÕI (BẤT BIẾN)
-1. **KHÔNG BAO GIỜ sửa tay file `game-kit/engine/engine.html`**. Khung giao diện, CSS màu xanh Sky Blue, thanh ray xe đua 🚗, đồng hồ tròn SVG 90s, modal bắt buộc nhập tên học sinh và Bảng vàng VIP Certificate đã được đóng băng cố định.
-2. Mọi game mới chỉ gồm:
-   - Thư mục chứa bài (ví dụ `De_Moi/` hoặc thư mục làm việc).
-   - File `game.json` tuân theo chuẩn schema trong [game-kit/docs/GAME_SPEC.md](file:///c:/Users/Admin/Downloads/Game/game-kit/docs/GAME_SPEC.md).
-   - Thư mục `media/` chứa ảnh WebP/PNG/JPG cắt từ đề và audio MP3.
-3. Trình biên dịch [game-kit/tools/build_game.py](file:///c:/Users/Admin/Downloads/Game/game-kit/tools/build_game.py) tự động:
-   - Kiểm tra lỗi dữ liệu.
-   - Băm đáp án bằng thuật toán `cyrb53` + muối `wtg_v2_2026`.
-   - Mã hóa Base64 UTF-8 cho lời giải thích (`e`) và đáp án mẫu (`full`).
-   - Nén ảnh sang WebP ($\le 900px, quality 82$).
-   - Nhúng audio MP3 Base64 và ráp vào `engine.html`.
-   - Sinh ra **1 FILE HTML DUY NHẤT** (All-in-One).
-4. **Nguyên tắc nội dung**: Cách làm (giao diện, luật chấm, quy trình) giữ nguyên chuẩn `game-kit`; nhưng **toàn bộ nội dung** (tiêu đề, câu hỏi, đáp án, giải thích, bài đọc, ảnh, audio, mốc nghe) **chỉ lấy từ file đề mới được giao**. Ví dụ mẫu `unit3_test` chỉ để tham khảo cấu trúc định dạng, tuyệt đối không sao chép nội dung câu hỏi sang đề mới.
+
+1. **KHÔNG BAO GIỜ sửa tay file `game-kit/engine/engine.html`**: Khung giao diện, CSS màu xanh Sky Blue, thanh ray xe đua 🚗, đồng hồ tròn SVG 90s, modal bắt buộc nhập tên học sinh và Bảng vàng VIP Certificate đã được đóng băng cố định.
+2. **Tiêu chuẩn 4 đáp án (A/B/C/D)**: 
+   - Bài test được thiết kế chuẩn hóa 4 lựa chọn (A/B/C/D) cho mọi khối lớp (theo nội dung tài liệu yêu cầu để đảm bảo tính phân hóa học sinh).
+   - Bắt buộc dùng hàm `place(dung, [sai1, sai2, sai3])` trong `common.py` để phân bố đều đáp án đúng vào các vị trí A, B, C, D (~25% mỗi vị trí), tuyệt đối không để vị trí nào lệch dồn cục $>50\%$.
+3. **Khai thác đầy đủ tính năng Audio Player (`audioMarks` & `audioAt`)**:
+   - Ở cấp phần thi nghe (`section`): Bắt buộc khai báo `audioMarks` chứa mốc thời gian bắt đầu của từng câu/số (vd: `[{"label": "Câu 1", "t": 5}, {"label": "Câu 2", "t": 18}, ...]`).
+   - Ở từng câu hỏi (`items`): Bắt buộc gán `audioAt: t` tương ứng. Khi học sinh bấm vào câu nào, trình phát audio tự động tua đúng đến phân đoạn đó.
+4. **Nén âm thanh chuẩn MP3 — Kiểm soát dung lượng file `< 2.5MB`**:
+   - Audio nhúng bắt buộc phải là **MP3 mono 64kbps** (hoặc dùng các file `.mp3` có sẵn trong thư mục).
+   - Tuyệt đối không để lọt audio `.wav` thô vào bản build (tránh làm file game phình to lên 4–8MB).
+   - Tổng dung lượng file HTML thành phẩm phải luôn **dưới 2.5MB**.
+5. **Cấu trúc bài đọc hiểu chuẩn (`passage`)**:
+   - Ở các phần đọc hiểu (Part 8...): Bắt buộc sử dụng cấu trúc `passage: { "kind": "reading", "header": "...", "paragraphs": [...], "img": "..." }`.
+   - Engine sẽ hiển thị khung đọc cố định song song (Split View) chuyên nghiệp. Tuyệt đối **không copy-paste lặp lại đoạn văn dài vào từng câu hỏi**.
+6. **Xử lý hình ảnh trực quan (Kể cả Part 2 Odd One Out)**:
+   - Các bài tìm từ khác loại (Odd one out) có tranh: Phải cắt ảnh dạng thẻ hoặc lưới 4 ô bằng `u.quad()` hoặc `u.grid()` để học sinh nhìn tranh chữ trực quan.
+7. **Độ trung thực nội dung 100% (Không Hallucination)**:
+   - Toàn bộ nội dung (tiêu đề, câu hỏi, đáp án, bài đọc, tranh, audio) lấy trung thực từ file đề được giao. Tuyệt đối không tự bịa bài đọc mới hay câu hỏi suy diễn phức tạp ngoài tài liệu.
 
 ---
 
@@ -43,37 +49,35 @@ Khi người dùng gửi **đề dạng PDF toàn ảnh scan/chụp** + **file n
    - `pdftoppm -r 100 -png de.pdf $WORK/pages/p` (xem nội dung & toạ độ 100dpi)
    - `pdftoppm -r 200 -png de.pdf $WORK/hi/p` (cắt ảnh sắc nét gấp đôi)
 2. **Phân tích Audio**:
-   - Chạy `python workflow/asr.py '*Part_4*.mp3'` hoặc `build_game.py --suggest-marks` để lấy bản chép lời thô và mốc giây.
-   - Mục nào chưa chắc chắn, ghi lại danh sách để người dùng nghe xác nhận.
+   - Quét tìm file `.mp3` có sẵn hoặc chạy `python workflow/asr.py '*Part_4*.mp3'` hoặc `build_game.py --suggest-marks` để lấy bản chép lời thô và mốc giây.
 3. **Viết script generator tự động với `game-kit/workflow/common.py`** (tham khảo `workflow/examples/mk_unit_mau.py`):
    - `u.crop(trang, (x0, y0, x1, y1), 'ten')`: cắt ảnh câu hỏi/bài đọc.
    - `u.grid(trang, [box...], 'ten', cols=3)`: ghép nhiều ô tranh nhỏ thành 1 ảnh lưới.
    - `u.quad(trang, y0, y1, x0, x1, 'ten')`: ghép hàng 4 tranh nhỏ thành lưới 2×2 cho bài "odd one out".
-   - `u.audio('*Part_4*.mp3', 'part4')`: chuẩn hoá audio mono 64k.
-   - `place(dung, [sai...])`: tự động xáo trộn và phân bổ đều đáp án đúng vào A, B, C, D (~25%).
+   - `u.audio('*Part_4*.mp3', 'part4')`: chuẩn hoá audio mono 64k (tự động phát hiện và ưu tiên MP3).
+   - `place(dung, [sai1, sai2, sai3])`: tự động xáo trộn và phân bổ đều 4 đáp án A, B, C, D (~25%).
    - `u.save({'sections': sec})`: tự động xuất file `game.json` chuẩn schema.
-4. **Thẩm định thị giác với `workflow/sheet.py`**:
-   - Chạy `python workflow/sheet.py <Unit> 1 3 4 5 8 10 12` để tạo ảnh ghép toàn diện các phần thi, duyệt trực quan đảm bảo không lỗi cắt tranh, không lộ đáp án.
+4. **Biên dịch & Thẩm định thị giác**:
+   - Chạy `python game-kit/tools/build_game.py $WORK/uX/game.json -o Game_GSX_UnitX_Test.html`
+   - Kiểm tra dung lượng file xuất xưởng bảo đảm `< 2.5MB` và 0 lỗi.
 
 ---
 
-## 📋 QUY TRÌNH THỰC HIỆN TỰ ĐỘNG
+## 📋 QUY TRÌNH THỰC HIỆN TỰ ĐỘNG (6 BƯỚC KHÉP KÍN)
 
 ### Bước 1: Khảo sát đề bài & Chuẩn bị tài nguyên
 - Đọc nội dung đề bài (từ PDF, Word docx, hoặc văn bản người dùng cung cấp).
-- Cắt và trích xuất ảnh câu hỏi vào thư mục `media/` (ảnh sắc nét, tối ưu dung lượng).
-- Nếu có file audio bài nghe:
-  - Sao chép vào thư mục `media/`.
-  - Có thể chạy: `python game-kit/tools/build_game.py --suggest-marks media/audio.mp3` để lấy gợi ý các mốc thời gian quãng lặng cho từng câu hỏi.
+- Cắt và trích xuất ảnh câu hỏi vào thư mục `media/` (ảnh WebP sắc nét, tối ưu dung lượng).
+- Lấy file audio MP3 (hoặc nén từ WAV sang MP3 64k), xác định các mốc giây `audioMarks`.
 
 ### Bước 2: Soạn thảo `game.json` chuẩn schema
 Soạn `game.json` với cấu trúc:
 ```jsonc
 {
-  "id": "ma_bai_viet_thuong_khong_dau",
-  "title": "Tên Đề Bài Đầy Đủ (Ví dụ: Unit 4 Test: My Day)",
-  "badge": "Luyện Thi Học Kỳ · Tiếng Anh 4 · Windy Bui",
-  "tag": "Tiếng Anh 4 · Unit 4",
+  "id": "gs3_u7",
+  "title": "GLOBAL SUCCESS - UNIT 7: CLASSROOM INSTRUCTIONS",
+  "badge": "Luyện Thi · Global Success",
+  "tag": "Global Success 3 · Unit 7",
   "mascot": "Cú Giáo Sư",
   "champTitle": "Thần Đồng Tiếng Anh",
   "settings": {
@@ -84,17 +88,24 @@ Soạn `game.json` với cấu trúc:
   },
   "sections": [
     {
-      "id": "part1",
-      "icon": "📝",
-      "title": "Part 1. Look and choose the correct answer",
-      "desc": "Mô tả phần thi",
+      "id": "part4",
+      "icon": "🎧",
+      "title": "Part 4. Listening – Listen and tick",
+      "desc": "Nghe đoạn hội thoại và chọn bức tranh đúng",
+      "audio": "media/part4.mp3",
+      "markLabel": "Nhảy đến câu:",
+      "audioMarks": [
+        {"label": "Câu 1", "t": 3.5},
+        {"label": "Câu 2", "t": 11.2}
+      ],
       "items": [
         {
-          "prompt": "1. Look at picture a...",
-          "img": "media/img01.webp",
-          "options": ["A. Monday", "B. Tuesday", "C. Wednesday", "D. Thursday"],
-          "answer": "A. Monday",
-          "explain": "Lời giải thích chi tiết bằng tiếng Việt."
+          "prompt": "1. Nghe và chọn bức tranh đúng:",
+          "img": "media/p4_1.webp",
+          "audioAt": 3.5,
+          "options": ["A. Stand up", "B. Sit down", "C. Open your book", "D. Close your book"],
+          "answer": "A. Stand up",
+          "explain": "Bài nghe nói: 'Stand up, please.' → Chọn A."
         }
       ]
     }
@@ -102,14 +113,11 @@ Soạn `game.json` với cấu trúc:
 }
 ```
 
-### Bước 3: Quy đổi các dạng bài tập về Trắc nghiệm (2–4 lựa chọn)
-Tuân thủ tuyệt đối bảng quy đổi tại Mục 5 của [GAME_SPEC.md](file:///c:/Users/Admin/Downloads/Game/game-kit/docs/GAME_SPEC.md):
-- **Nhìn tranh tick ô**: Cung cấp `img` + 4 đáp án (đáp án đúng + 3 nhiễu hợp lý).
+### Bước 3: Quy đổi các dạng bài tập về Trắc nghiệm 4 lựa chọn (A/B/C/D)
+- **Nhìn tranh tick ô**: Cung cấp `img` + 4 đáp án (1 đúng + 3 sai).
 - **Điền từ vào câu có khung từ**: Cung cấp `wordBank: ["word1", "word2", ...]` + 4 options chọn từ khung.
-- **Đúng / Sai (True / False)**: 2 lựa chọn `["True (✓)", "False (✗)"]`.
-- **Đoạn văn đọc hiểu**: Dùng `passage: { "kind": "reading", "header": "...", "paragraphs": [...] }`.
+- **Đoạn văn đọc hiểu**: Dùng `passage: { "kind": "reading", "header": "...", "paragraphs": [...] }` + 4 options.
 - **Điền từ vào đoạn văn**: Dùng `passage: { "kind": "blanks", "header": "...", "paragraphs": ["... {1} ... {2} ..."] }` kèm `wordBank`.
-- **Hội thoại**: Dùng `passage: { "kind": "dialogue", "lines": [{"who": "Nam", "text": "..."}, ...] }`.
 - **Sắp xếp câu**: 1 câu đúng trật tự + 3 câu xáo trộn sai kiểu học sinh hay mắc.
 - **Nghe**: Gắn `audio: "media/partX.mp3"`, mốc `audioMarks`, và `audioAt` theo từng câu.
 
@@ -119,6 +127,7 @@ Chạy lệnh biên dịch:
 python game-kit/tools/build_game.py <duong_dan_game.json> -o <Ten_File_Game>.html
 ```
 - Phải đảm bảo kết quả in ra: **0 LỖI (✘)**.
+- Dung lượng file HTML: **< 2.5 MB**.
 - Phân bổ đáp án A, B, C, D phải cân đối đều (~25%), không bị lệch dồn cục $>50\%$.
 
 ### Bước 5: Tự động sao lưu & Kiểm thử
@@ -128,10 +137,11 @@ python game-kit/tools/build_game.py <duong_dan_game.json> -o <Ten_File_Game>.htm
    ```
 2. **Kiểm tra**:
    - File tồn tại ở cả thư mục gốc và `3/` với kích thước byte bằng nhau.
-   - Thử nghiệm chức năng chạy mượt mà.
+   - Thử nghiệm chức năng chạy mượt mà offline 100%.
 
 ### Bước 6: Báo cáo kết quả cho người dùng
 Gửi bảng tóm tắt:
-- Tên bài thi, số lượng câu hỏi, số phần thi, file ảnh & audio nhúng.
+- Tên bài thi, số lượng câu hỏi (chuẩn 4 đáp án), số phần thi, file ảnh & audio nhúng.
+- Dung lượng file tối ưu (< 2.5MB).
 - Xác nhận trạng thái sao lưu tại thư mục `3/`.
 - Link trực tiếp đến file HTML để người dùng mở xem ngay.
