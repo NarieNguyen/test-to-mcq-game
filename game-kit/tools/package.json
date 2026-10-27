@@ -1,0 +1,6 @@
+{
+  "name": "game-kit-tools",
+  "private": true,
+  "description": "Chạy: npm i  (chỉ cần để chạy test_game.js)",
+  "dependencies": { "jsdom": "^24.0.0" }
+}

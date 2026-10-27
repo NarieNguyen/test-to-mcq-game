@@ -1,0 +1,1085 @@
+{
+ "id": "ta4_u3",
+ "title": "Unit 3 Test: My Week (Global Success 4)",
+ "badge": "Luyện Thi Học Kỳ · Tiếng Anh 4 · Windy Bui",
+ "tag": "Global Success 4 · Unit 3",
+ "mascot": "Cú Giáo Sư",
+ "settings": {
+  "secondsPerQuestion": 90,
+  "basePoints": 100,
+  "maxSpeedBonus": 50
+ },
+ "sections": [
+  {
+   "id": "part1",
+   "icon": "🖼️",
+   "title": "Part 1. Look at each picture and tick the correct box",
+   "desc": "9 câu nhận biết các thứ trong tuần & hoạt động hàng tuần qua tranh",
+   "items": [
+    {
+     "prompt": "Look at the calendar (June 2026). Which day is circled?",
+     "options": [
+      "Friday",
+      "Wednesday",
+      "Monday",
+      "Sunday"
+     ],
+     "answer": "Monday",
+     "explain": "Tờ lịch tháng 6/2026 khoanh tròn cột thứ Hai (MON: 1, 8, 15, 22, 29) -> 'Monday'.",
+     "img": "media/img01.webp"
+    },
+    {
+     "prompt": "Look at the calendar (June 2026). Which day is circled?",
+     "options": [
+      "Wednesday",
+      "Tuesday",
+      "Friday",
+      "Thursday"
+     ],
+     "answer": "Thursday",
+     "explain": "Tờ lịch khoanh tròn cột thứ Năm (THU: 4, 11, 18, 25) -> 'Thursday'.",
+     "img": "media/img02.webp"
+    },
+    {
+     "prompt": "Look at the calendar (June 2026). Which day is circled?",
+     "options": [
+      "Saturday",
+      "Sunday",
+      "Monday",
+      "Tuesday"
+     ],
+     "answer": "Saturday",
+     "explain": "Tờ lịch khoanh tròn cột thứ Bảy (SAT: 6, 13, 20, 27) -> 'Saturday'.",
+     "img": "media/img03.webp"
+    },
+    {
+     "prompt": "Look at the picture. What does he do?",
+     "options": [
+      "Listen to music",
+      "Study at school",
+      "Do homework",
+      "Stay at home"
+     ],
+     "answer": "Study at school",
+     "explain": "Tranh vẽ bạn nam ngồi chăm chỉ học bài trong lớp học -> 'Study at school' (Học ở trường).",
+     "img": "media/img04.webp"
+    },
+    {
+     "prompt": "Look at the picture. What does she do?",
+     "options": [
+      "Stay at home",
+      "Study at school",
+      "Do homework",
+      "Listen to music"
+     ],
+     "answer": "Do homework",
+     "explain": "Tranh vẽ bạn nữ ngồi làm bài tập về nhà với sách vở và bút -> 'Do homework' (Làm bài tập về nhà).",
+     "img": "media/img05.webp"
+    },
+    {
+     "prompt": "Look at the picture. What does she do?",
+     "options": [
+      "Do homework",
+      "Study at school",
+      "Stay at home",
+      "Listen to music"
+     ],
+     "answer": "Listen to music",
+     "explain": "Tranh vẽ bạn nữ đeo tai nghe hồng thưởng thức âm nhạc -> 'Listen to music' (Nghe nhạc).",
+     "img": "media/img06.webp"
+    },
+    {
+     "prompt": "Look at the picture. What does he do?",
+     "options": [
+      "Stay at home",
+      "Study at school",
+      "Do homework",
+      "Go to the park"
+     ],
+     "answer": "Stay at home",
+     "explain": "Tranh vẽ bạn nam thư giãn đọc sách trên ghế sofa tại nhà -> 'Stay at home' (Ở nhà).",
+     "img": "media/img07.webp"
+    },
+    {
+     "prompt": "Look at the calendar (June 2026). Which day is circled?",
+     "options": [
+      "Thursday",
+      "Tuesday",
+      "Monday",
+      "Wednesday"
+     ],
+     "answer": "Tuesday",
+     "explain": "Tờ lịch khoanh tròn cột thứ Ba (TUE: 2, 9, 16, 23, 30) -> 'Tuesday'.",
+     "img": "media/img08.webp"
+    },
+    {
+     "prompt": "Look at the calendar (June 2026). Which day is circled?",
+     "options": [
+      "Monday",
+      "Tuesday",
+      "Friday",
+      "Thursday"
+     ],
+     "answer": "Friday",
+     "explain": "Tờ lịch khoanh tròn cột thứ Sáu (FRI: 5, 12, 19, 26) -> 'Friday'.",
+     "img": "media/img09.webp"
+    }
+   ]
+  },
+  {
+   "id": "part2",
+   "icon": "✍️",
+   "title": "Part 2. Write a word under each picture",
+   "desc": "6 câu nhìn tranh và chọn từ/cụm từ thích hợp trong khung từ cho trước",
+   "wordBank": [
+    "Monday",
+    "Friday",
+    "Sunday",
+    "study at school",
+    "do homework",
+    "listen to music"
+   ],
+   "items": [
+    {
+     "prompt": "Look at picture 1. Write a word / phrase under the picture:",
+     "options": [
+      "Friday",
+      "Sunday",
+      "study at school",
+      "Monday"
+     ],
+     "answer": "Monday",
+     "explain": "Tranh 1 khoanh tròn cột thứ Hai (MON) -> 'Monday'.",
+     "img": "media/img10.webp"
+    },
+    {
+     "prompt": "Look at picture 2. Write a word / phrase under the picture:",
+     "options": [
+      "Friday",
+      "Monday",
+      "Sunday",
+      "do homework"
+     ],
+     "answer": "Friday",
+     "explain": "Tranh 2 khoanh tròn cột thứ Sáu (FRI) -> 'Friday'.",
+     "img": "media/img11.webp"
+    },
+    {
+     "prompt": "Look at picture 3. Write a word / phrase under the picture:",
+     "options": [
+      "Monday",
+      "Sunday",
+      "Friday",
+      "listen to music"
+     ],
+     "answer": "Sunday",
+     "explain": "Tranh 3 khoanh tròn cột Chủ Nhật (SUN) -> 'Sunday'.",
+     "img": "media/img12.webp"
+    },
+    {
+     "prompt": "Look at picture 4. Write a word / phrase under the picture:",
+     "options": [
+      "do homework",
+      "listen to music",
+      "study at school",
+      "Monday"
+     ],
+     "answer": "study at school",
+     "explain": "Tranh 4 vẽ bạn nam đang học bài trong lớp học -> 'study at school'.",
+     "img": "media/img13.webp"
+    },
+    {
+     "prompt": "Look at picture 5. Write a word / phrase under the picture:",
+     "options": [
+      "study at school",
+      "listen to music",
+      "Friday",
+      "do homework"
+     ],
+     "answer": "do homework",
+     "explain": "Tranh 5 vẽ bạn nữ đang ngồi làm bài tập về nhà -> 'do homework'.",
+     "img": "media/img14.webp"
+    },
+    {
+     "prompt": "Look at picture 6. Write a word / phrase under the picture:",
+     "options": [
+      "listen to music",
+      "do homework",
+      "study at school",
+      "Sunday"
+     ],
+     "answer": "listen to music",
+     "explain": "Tranh 6 vẽ bạn nữ đeo tai nghe nghe nhạc -> 'listen to music'.",
+     "img": "media/img15.webp"
+    }
+   ]
+  },
+  {
+   "id": "part3",
+   "icon": "✔️",
+   "title": "Part 3. Look, read and tick ✓ or cross ✗",
+   "desc": "6 câu đối chiếu tranh lịch/hoạt động và câu đúng/sai",
+   "items": [
+    {
+     "prompt": "Look at picture 1 (Calendar circles Tuesday): 'It's Sunday today.'",
+     "options": [
+      "False (✗)",
+      "True (✓)"
+     ],
+     "answer": "False (✗)",
+     "explain": "Tờ lịch khoanh thứ Ba (TUE), nhưng câu viết là Chủ Nhật (Sunday) -> Sai (Cross ✗).",
+     "img": "media/img16.webp"
+    },
+    {
+     "prompt": "Look at picture 2 (Calendar circles Thursday): 'I go swimming on Thursday.'",
+     "options": [
+      "False (✗)",
+      "True (✓)"
+     ],
+     "answer": "True (✓)",
+     "explain": "Tờ lịch khoanh đúng cột thứ Năm (THU: 4, 11, 18, 25), phù hợp với ngày thứ Năm trong câu 'I go swimming on Thursday' -> Chọn Đúng (Tick ✓).",
+     "img": "media/img17.webp"
+    },
+    {
+     "prompt": "Look at picture 3 (Boy studying in classroom): 'I study at school on Monday.'",
+     "options": [
+      "True (✓)",
+      "False (✗)"
+     ],
+     "answer": "True (✓)",
+     "explain": "Tranh vẽ bạn nhỏ ngồi học tại trường học, phù hợp câu miêu tả -> Đúng (Tick ✓).",
+     "img": "media/img18.webp"
+    },
+    {
+     "prompt": "Look at picture 4 (Girl with headphones): 'I listen to music on Sunday.'",
+     "options": [
+      "False (✗)",
+      "True (✓)"
+     ],
+     "answer": "True (✓)",
+     "explain": "Tranh vẽ bạn nữ đeo tai nghe nghe nhạc, phù hợp câu miêu tả -> Đúng (Tick ✓).",
+     "img": "media/img19.webp"
+    },
+    {
+     "prompt": "Look at picture 5 (Calendar circles Saturday): 'It's Saturday.'",
+     "options": [
+      "True (✓)",
+      "False (✗)"
+     ],
+     "answer": "True (✓)",
+     "explain": "Tờ lịch khoanh đúng cột thứ Bảy (SAT) và câu viết 'It's Saturday' -> Đúng (Tick ✓).",
+     "img": "media/img20.webp"
+    },
+    {
+     "prompt": "Look at picture 6 (Girl doing homework): 'I do my homework on Sunday.'",
+     "options": [
+      "False (✗)",
+      "True (✓)"
+     ],
+     "answer": "True (✓)",
+     "explain": "Tranh vẽ bạn nữ đang làm bài tập về nhà, phù hợp câu miêu tả -> Đúng (Tick ✓).",
+     "img": "media/img21.webp"
+    }
+   ]
+  },
+  {
+   "id": "part4",
+   "icon": "🎧",
+   "title": "Part 4. Listen and tick. Then write",
+   "desc": "6 câu nghe chọn đáp án & hoàn thành câu",
+   "audio": "media/part4.mp3",
+   "markLabel": "Nhảy đến câu:",
+   "audioMarks": [
+    {
+     "label": "Câu 1",
+     "t": 0
+    },
+    {
+     "label": "Câu 2",
+     "t": 18
+    },
+    {
+     "label": "Câu 3",
+     "t": 26
+    },
+    {
+     "label": "Câu 4",
+     "t": 37
+    },
+    {
+     "label": "Câu 5",
+     "t": 47
+    },
+    {
+     "label": "Câu 6",
+     "t": 55
+    }
+   ],
+   "items": [
+    {
+     "prompt": "Listen to audio #1. Tick the correct picture and complete: 'It is _______.'",
+     "options": [
+      "b (Tuesday)",
+      "a (Monday)",
+      "Wednesday",
+      "Thursday"
+     ],
+     "answer": "a (Monday)",
+     "explain": "Bài nghe: 'What day is it today? - It is Monday.' -> Chọn hình a (Monday). Viết: 'It is Monday.'",
+     "img": "media/img22.webp",
+     "audioAt": 0
+    },
+    {
+     "prompt": "Listen to audio #2. Tick the correct picture and complete: 'It is _______.'",
+     "options": [
+      "b (Friday)",
+      "Wednesday",
+      "a (Thursday)",
+      "Tuesday"
+     ],
+     "answer": "a (Thursday)",
+     "explain": "Bài nghe: 'What day is it today? - It's Thursday. Tomorrow is Friday.' -> Chọn hình a (Thursday). Viết: 'It is Thursday.'",
+     "img": "media/img23.webp",
+     "audioAt": 18
+    },
+    {
+     "prompt": "Listen to audio #3. Tick the correct picture and complete: 'He _______.'",
+     "options": [
+      "a (studies at school)",
+      "c (goes swimming)",
+      "d (listens to music)",
+      "b (does homework at home)"
+     ],
+     "answer": "b (does homework at home)",
+     "explain": "Bài nghe: 'What does Nam do on Mondays? - He does homework at home.' -> Chọn hình b.",
+     "img": "media/img24.webp",
+     "audioAt": 26
+    },
+    {
+     "prompt": "Listen to audio #4. Tick the correct picture and complete: 'She _______.'",
+     "options": [
+      "a (listens to music)",
+      "b (reads a book)",
+      "c (studies at school)",
+      "d (stays at home)"
+     ],
+     "answer": "a (listens to music)",
+     "explain": "Bài nghe: 'What does Mai do on Sundays? - She doesn't read a book. She listens to music.' -> Chọn hình a.",
+     "img": "media/img25.webp",
+     "audioAt": 37
+    },
+    {
+     "prompt": "Listen to audio #5. Tick the correct picture and complete: 'It is _______.'",
+     "options": [
+      "a (Saturday)",
+      "b (Sunday)",
+      "c (Friday)",
+      "d (Monday)"
+     ],
+     "answer": "b (Sunday)",
+     "explain": "Bài nghe: 'Is it Saturday today? - No, Saturday was yesterday. It's Sunday today.' -> Chọn hình b (Sunday).",
+     "img": "media/img26.webp",
+     "audioAt": 47
+    },
+    {
+     "prompt": "Listen to audio #6. Tick the correct picture and complete: 'He _______ on Saturdays.'",
+     "options": [
+      "a (does homework)",
+      "c (rides a bike)",
+      "b (listens to music)",
+      "d (studies at school)"
+     ],
+     "answer": "b (listens to music)",
+     "explain": "Bài nghe: 'What does he do on Saturdays? - He listens to music on Saturdays.' -> Chọn hình b.",
+     "img": "media/img27.webp",
+     "audioAt": 55
+    }
+   ]
+  },
+  {
+   "id": "part5",
+   "icon": "📻",
+   "title": "Part 5. Listen and choose True (T) or False (F)",
+   "desc": "6 câu nghe đoạn văn xác định Đúng / Sai",
+   "audio": "media/part5.mp3",
+   "markLabel": "Nhảy mốc nghe:",
+   "audioMarks": [
+    {
+     "label": "Đầu bài",
+     "t": 0
+    },
+    {
+     "label": "Ian",
+     "t": 11
+    },
+    {
+     "label": "Nam",
+     "t": 18
+    },
+    {
+     "label": "Mai",
+     "t": 24
+    },
+    {
+     "label": "Tom",
+     "t": 30
+    }
+   ],
+   "items": [
+    {
+     "prompt": "Listen to audio: 'It is Monday today.'",
+     "options": [
+      "True (t)",
+      "False (f)"
+     ],
+     "answer": "True (t)",
+     "explain": "Bài nghe Linda nói: 'Hello, my name is Linda. Today is Monday.' -> True (t)."
+    },
+    {
+     "prompt": "Listen to audio: 'Ian studies at school on Thursdays.'",
+     "options": [
+      "False (f)",
+      "True (t)"
+     ],
+     "answer": "True (t)",
+     "explain": "Bài nghe: 'Ian studies at school from Monday to Friday, so he studies at school on Thursdays.' -> True (t)."
+    },
+    {
+     "prompt": "Listen to audio: 'Nam listens to music on Sundays.'",
+     "options": [
+      "False (f)",
+      "True (t)"
+     ],
+     "answer": "False (f)",
+     "explain": "Bài nghe: 'Nam likes music, but he listens to music on Saturdays. On Sundays, he does his homework.' -> False (f)."
+    },
+    {
+     "prompt": "Listen to audio: 'Mai does homework on Saturdays.'",
+     "options": [
+      "False (f)",
+      "True (t)"
+     ],
+     "answer": "True (t)",
+     "explain": "Bài nghe: 'Mai does homework on Saturdays. She listens to music on Sundays.' -> True (t)."
+    },
+    {
+     "prompt": "Listen to audio: 'Tom stays at home on Sundays.'",
+     "options": [
+      "True (t)",
+      "False (f)"
+     ],
+     "answer": "True (t)",
+     "explain": "Bài nghe: 'Tom stays at home on Sundays.' -> True (t)."
+    },
+    {
+     "prompt": "Listen to audio: 'Tom sometimes read books with his brother.'",
+     "options": [
+      "True (t)",
+      "False (f)"
+     ],
+     "answer": "False (f)",
+     "explain": "Bài nghe: 'He sometimes reads a book with his sister.' (với chị/em gái 'sister', không phải anh em trai 'brother') -> False (f)."
+    }
+   ]
+  },
+  {
+   "id": "part6",
+   "icon": "📝",
+   "title": "Part 6. Read / Listen and fill in the blanks",
+   "desc": "6 câu nghe đoạn văn & chọn từ trong dãy từ cho trước",
+   "audio": "media/part6.mp3",
+   "wordBank": [
+    "Friday",
+    "study",
+    "do homework",
+    "ride my bike",
+    "listen to music",
+    "week"
+   ],
+   "items": [
+    {
+     "prompt": "Listen and fill in blank (1): 'Hello. My name is Mai. Today is (1) _______.'",
+     "options": [
+      "Monday",
+      "Sunday",
+      "week",
+      "Friday"
+     ],
+     "answer": "Friday",
+     "explain": "Bài nghe: 'Today is Friday.' -> Điền 'Friday'."
+    },
+    {
+     "prompt": "Listen and fill in blank (2): 'On weekdays, I (2) _______ at school.'",
+     "options": [
+      "study",
+      "ride my bike",
+      "do homework",
+      "listen to music"
+     ],
+     "answer": "study",
+     "explain": "Bài nghe: 'On weekdays, I study at school.' -> Điền 'study'."
+    },
+    {
+     "prompt": "Listen and fill in blank (3): 'On Saturdays, I (3) _______.'",
+     "options": [
+      "study",
+      "do homework",
+      "ride my bike",
+      "listen to music"
+     ],
+     "answer": "do homework",
+     "explain": "Bài nghe: 'On Saturdays, I do homework.' -> Điền 'do homework'."
+    },
+    {
+     "prompt": "Listen and fill in blank (4): 'On Sundays, I (4) _______.'",
+     "options": [
+      "do homework",
+      "study",
+      "ride my bike",
+      "Friday"
+     ],
+     "answer": "ride my bike",
+     "explain": "Bài nghe: 'On Sundays, I ride my bike.' -> Điền 'ride my bike'."
+    },
+    {
+     "prompt": "Listen and fill in blank (5): 'I also (5) _______ on Sundays.'",
+     "options": [
+      "do homework",
+      "study",
+      "week",
+      "listen to music"
+     ],
+     "answer": "listen to music",
+     "explain": "Bài nghe: 'I also listen to music on Sundays.' -> Điền 'listen to music'."
+    },
+    {
+     "prompt": "Listen and fill in blank (6): 'I like my (6) _______.'",
+     "options": [
+      "week",
+      "Friday",
+      "bike",
+      "school"
+     ],
+     "answer": "week",
+     "explain": "Bài nghe: 'I like my week.' -> Điền 'week'."
+    }
+   ]
+  },
+  {
+   "id": "part7",
+   "icon": "❓",
+   "title": "Part 7. Look, read and answer the questions",
+   "desc": "5 câu đọc bảng thời gian biểu Ian's week và trả lời câu hỏi",
+   "imgStyle": "framed",
+   "items": [
+    {
+     "prompt": "What day is it in Ian's chart after Monday?",
+     "options": [
+      "Wednesday",
+      "Tuesday",
+      "Thursday",
+      "Sunday"
+     ],
+     "answer": "Tuesday",
+     "explain": "Trong bảng thời gian biểu, sau ngày thứ Hai (Monday) là ngày thứ Ba -> 'Tuesday'.",
+     "img": "media/img28.webp"
+    },
+    {
+     "prompt": "What does Ian do on Thursdays?",
+     "options": [
+      "He studies at school",
+      "He listens to music",
+      "He does homework",
+      "He stays at home"
+     ],
+     "answer": "He does homework",
+     "explain": "Trong bảng, cột Thursday ghi hoạt động: 'do homework' -> 'He does homework'.",
+     "img": "media/img28.webp"
+    },
+    {
+     "prompt": "What does Ian do on Saturdays?",
+     "options": [
+      "He does homework",
+      "He studies at school",
+      "He stays at home",
+      "He listens to music"
+     ],
+     "answer": "He listens to music",
+     "explain": "Trong bảng, cột Saturday ghi hoạt động: 'listen to music' -> 'He listens to music'.",
+     "img": "media/img28.webp"
+    },
+    {
+     "prompt": "What does Ian do on Sundays?",
+     "options": [
+      "He stays at home",
+      "He studies at school",
+      "He does homework",
+      "He goes swimming"
+     ],
+     "answer": "He stays at home",
+     "explain": "Trong bảng, cột Sunday ghi hoạt động: 'stay at home' -> 'He stays at home'.",
+     "img": "media/img28.webp"
+    },
+    {
+     "prompt": "Does Ian study at school on Friday?",
+     "options": [
+      "No, he doesn't",
+      "Yes, he does",
+      "Yes, he is",
+      "No, he isn't"
+     ],
+     "answer": "Yes, he does",
+     "explain": "Trong bảng, dòng Friday ghi: 'study at school' -> Câu trả lời đúng là 'Yes, he does'.",
+     "img": "media/img28.webp"
+    }
+   ]
+  },
+  {
+   "id": "part8",
+   "icon": "📖",
+   "title": "Part 8. Read and Tick True or False",
+   "desc": "7 câu đọc đoạn văn Tom kể về một tuần và chọn Đúng / Sai",
+   "passage": {
+    "kind": "reading",
+    "theme": "amber",
+    "header": "BÀI ĐỌC BÀI THI - PART 8 (ĐỌC ĐOẠN VĂN CỦA TOM ĐỂ TRẢ LỜI CÂU HỎI):",
+    "img": "media/img29.webp",
+    "paragraphs": [
+     "<b>\"Hello. My name is Tom. It is Monday today.</b>",
+     "On Mondays, Tuesdays, Wednesdays, Thursdays and Fridays, I study at school.",
+     "On Saturdays, I do homework.",
+     "On Sundays, I stay at home and listen to music. <b>I like my week.\"</b>"
+    ]
+   },
+   "items": [
+    {
+     "prompt": "'It is Monday today.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "true",
+      "false"
+     ],
+     "answer": "true",
+     "explain": "Đoạn văn Tom viết ngay câu đầu: 'Hello. My name is Tom. It is Monday today.' -> Chọn True (Đúng)."
+    },
+    {
+     "prompt": "'Tom studies at school on Fridays.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "false",
+      "true"
+     ],
+     "answer": "true",
+     "explain": "Đoạn văn viết: 'On Mondays, Tuesdays, Wednesdays, Thursdays and Fridays, I study at school.' (Thứ Sáu Tom học ở trường) -> Chọn True (Đúng)."
+    },
+    {
+     "prompt": "'Tom does homework on Sundays.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "false",
+      "true"
+     ],
+     "answer": "false",
+     "explain": "Đoạn văn viết: 'On Saturdays, I do homework. On Sundays, I stay at home and listen to music.' (Tom làm bài tập vào thứ Bảy, không phải Chủ Nhật) -> Chọn False (Sai)."
+    },
+    {
+     "prompt": "'Tom stays at home on Sundays.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "false",
+      "true"
+     ],
+     "answer": "true",
+     "explain": "Đoạn văn viết: 'On Sundays, I stay at home and listen to music.' -> Chọn True (Đúng)."
+    },
+    {
+     "prompt": "'Tom listens to music on Sundays.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "true",
+      "false"
+     ],
+     "answer": "true",
+     "explain": "Đoạn văn viết: 'On Sundays, I stay at home and listen to music.' -> Chọn True (Đúng)."
+    },
+    {
+     "prompt": "'Tom studies at school on Saturdays.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "true",
+      "false"
+     ],
+     "answer": "false",
+     "explain": "Thứ Bảy Tom làm bài tập ở nhà ('On Saturdays, I do homework'), không học ở trường -> Chọn False (Sai)."
+    },
+    {
+     "prompt": "'Tom likes his week.' (Đúng hay Sai so với bài đọc của Tom?)",
+     "options": [
+      "true",
+      "false"
+     ],
+     "answer": "true",
+     "explain": "Câu kết thúc của bài đọc: 'I like my week.' (Tom rất yêu thích một tuần của mình) -> Chọn True (Đúng)."
+    }
+   ]
+  },
+  {
+   "id": "part9",
+   "icon": "🧩",
+   "title": "Part 9. Read and fill in the blanks",
+   "desc": "6 câu đọc đoạn văn Nam và chọn từ trong khung từ",
+   "wordBank": [
+    "weekdays",
+    "Friday",
+    "do my homework",
+    "go to the park",
+    "week",
+    "ride my bike"
+   ],
+   "passage": {
+    "kind": "blanks",
+    "theme": "blue",
+    "header": "ĐỀ BÀI PART 9: ĐỌC ĐOẠN VĂN CỦA NAM VÀ ĐIỀN TỪ VÀO CHỖ TRỐNG",
+    "img": "media/img30.webp",
+    "paragraphs": [
+     "Hello. My name is Nam. Today is {1}. I study at school on {2}.",
+     "On Saturday, I {3}.",
+     "On Sunday, I {4} and {5}.",
+     "I like my {6}."
+    ],
+    "note": "Em đang làm <b>chỗ trống ({n})</b> nhấp nháy màu vàng. Hãy chọn từ đúng nhất trong Khay từ bên dưới nhé!"
+   },
+   "items": [
+    {
+     "prompt": "Chỗ trống (1): Chọn từ điền vào: 'Hello. My name is Nam. Today is (1) _______ .'",
+     "options": [
+      "weekdays",
+      "week",
+      "Friday",
+      "park"
+     ],
+     "answer": "Friday",
+     "explain": "Từ chỉ ngày trong tuần phù hợp trong khung là 'Friday' -> 'Today is Friday.' (Hôm nay là thứ Sáu)."
+    },
+    {
+     "prompt": "Chỗ trống (2): Chọn từ điền vào: 'I study at school on (2) _______ .'",
+     "options": [
+      "week",
+      "Friday",
+      "Sundays",
+      "weekdays"
+     ],
+     "answer": "weekdays",
+     "explain": "Từ phù hợp trong khung là 'weekdays' -> 'I study at school on weekdays.' (Tôi học ở trường vào các ngày trong tuần)."
+    },
+    {
+     "prompt": "Chỗ trống (3): Chọn cụm từ điền vào: 'On Saturday, I (3) _______ .'",
+     "options": [
+      "do my homework",
+      "ride my bike",
+      "go to the park",
+      "week"
+     ],
+     "answer": "do my homework",
+     "explain": "Cụm từ hoạt động phù hợp là 'do my homework' -> 'On Saturday, I do my homework.' (Vào thứ Bảy, tôi làm bài tập về nhà)."
+    },
+    {
+     "prompt": "Chỗ trống (4): Chọn cụm từ điền vào: 'On Sunday, I (4) _______ ...'",
+     "options": [
+      "weekdays",
+      "go to the park",
+      "do my homework",
+      "Friday"
+     ],
+     "answer": "go to the park",
+     "explain": "Cụm từ phù hợp là 'go to the park' -> 'On Sunday, I go to the park and ride my bike.' (Vào Chủ Nhật, tôi đi công viên...)."
+    },
+    {
+     "prompt": "Chỗ trống (5): Chọn cụm từ điền vào: '... and (5) _______ .'",
+     "options": [
+      "week",
+      "weekdays",
+      "ride my bike",
+      "do my homework"
+     ],
+     "answer": "ride my bike",
+     "explain": "Cụm từ phù hợp là 'ride my bike' -> '... and ride my bike.' (... và đạp xe)."
+    },
+    {
+     "prompt": "Chỗ trống (6): Chọn từ điền vào: 'I like my (6) _______ .'",
+     "options": [
+      "Friday",
+      "park",
+      "bike",
+      "week"
+     ],
+     "answer": "week",
+     "explain": "Từ phù hợp là 'week' -> 'I like my week.' (Tôi rất thích một tuần của mình)."
+    }
+   ]
+  },
+  {
+   "id": "part10",
+   "icon": "💬",
+   "title": "Part 10. Read dialogue and answer the questions",
+   "desc": "8 câu nghe & đọc hội thoại Mai & Nam rồi trả lời câu hỏi",
+   "audio": "media/part10.mp3",
+   "passage": {
+    "kind": "dialogue",
+    "header": "ĐOẠN HỘI THOẠI GIỮA MAI VÀ NAM (Nghe audio ở trên hoặc đọc theo):",
+    "lines": [
+     {
+      "who": "Mai",
+      "text": "Hi, Nam. What day is it today?"
+     },
+     {
+      "who": "Nam",
+      "text": "It's Thursday."
+     },
+     {
+      "who": "Mai",
+      "text": "What do you do on Thursdays?"
+     },
+     {
+      "who": "Nam",
+      "text": "I study at school."
+     },
+     {
+      "who": "Mai",
+      "text": "What do you do on Saturdays?"
+     },
+     {
+      "who": "Nam",
+      "text": "I do homework."
+     },
+     {
+      "who": "Mai",
+      "text": "What do you do on Sundays?"
+     },
+     {
+      "who": "Nam",
+      "text": "I stay at home and listen to music."
+     },
+     {
+      "who": "Mai",
+      "text": "Do you like Sundays?"
+     },
+     {
+      "who": "Nam",
+      "text": "Yes, I do."
+     }
+    ]
+   },
+   "items": [
+    {
+     "prompt": "What day is it today?",
+     "options": [
+      "It's Thursday.",
+      "It's Tuesday.",
+      "It's Friday.",
+      "It's Sunday."
+     ],
+     "answer": "It's Thursday.",
+     "explain": "Nam trả lời Mai: 'It's Thursday.' (Hôm nay là thứ Năm).",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "What does Nam do on Thursdays?",
+     "options": [
+      "He does homework.",
+      "He studies at school.",
+      "He listens to music.",
+      "He stays at home."
+     ],
+     "answer": "He studies at school.",
+     "explain": "Nam trả lời: 'I study at school.' -> 'He studies at school.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "What does Nam do on Saturdays?",
+     "options": [
+      "He studies at school.",
+      "He listens to music.",
+      "He does homework.",
+      "He rides a bike."
+     ],
+     "answer": "He does homework.",
+     "explain": "Nam trả lời: 'I do homework.' -> 'He does homework.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "What does Nam do on Sundays?",
+     "options": [
+      "He studies at school.",
+      "He does homework.",
+      "He goes to the park.",
+      "He stays at home and listens to music."
+     ],
+     "answer": "He stays at home and listens to music.",
+     "explain": "Nam trả lời: 'I stay at home and listen to music.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "Does Nam listen to music on Sundays?",
+     "options": [
+      "Yes, he does.",
+      "No, he doesn't.",
+      "Yes, he is.",
+      "No, he isn't."
+     ],
+     "answer": "Yes, he does.",
+     "explain": "Nam ở nhà và nghe nhạc vào Chủ Nhật -> 'Yes, he does.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "Does Nam study at school on Thursdays?",
+     "options": [
+      "No, he doesn't.",
+      "Yes, he does.",
+      "Yes, he can.",
+      "No, he can't."
+     ],
+     "answer": "Yes, he does.",
+     "explain": "Nam học ở trường vào thứ Năm -> 'Yes, he does.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "Does Nam like Sundays?",
+     "options": [
+      "No, he doesn't.",
+      "Yes, he did.",
+      "Yes, he does.",
+      "No, he didn't."
+     ],
+     "answer": "Yes, he does.",
+     "explain": "Mai hỏi: 'Do you like Sundays?' - Nam trả lời: 'Yes, I do.'",
+     "img": "media/img31.webp"
+    },
+    {
+     "prompt": "Who is talking to Nam?",
+     "options": [
+      "Linda",
+      "Mary",
+      "Lucy",
+      "Mai"
+     ],
+     "answer": "Mai",
+     "explain": "Nhân vật nữ đang nói chuyện cùng Nam là bạn Mai.",
+     "img": "media/img31.webp"
+    }
+   ]
+  },
+  {
+   "id": "part11",
+   "icon": "🔀",
+   "title": "Part 11. Put the words in order",
+   "desc": "10 câu sắp xếp trật tự từ thành câu hoàn chỉnh",
+   "items": [
+    {
+     "prompt": "Put the words in order: 'Is / it / day / what / today / ?'",
+     "options": [
+      "What day is it today?",
+      "What is day it today?",
+      "What day it is today?",
+      "Is it what day today?"
+     ],
+     "answer": "What day is it today?",
+     "explain": "Cấu trúc hỏi thứ trong tuần: 'What day is it today?' (Hôm nay là thứ mấy?)."
+    },
+    {
+     "prompt": "Put the words in order: 'it / Monday / is / .'",
+     "options": [
+      "Monday it is.",
+      "It is Monday.",
+      "Is it Monday.",
+      "It Monday is."
+     ],
+     "answer": "It is Monday.",
+     "explain": "Cấu trúc câu khẳng định trả lời: 'It is Monday.' (Hôm nay là thứ Hai)."
+    },
+    {
+     "prompt": "Put the words in order: 'What / do / you / do / on / Sundays / ?'",
+     "options": [
+      "What you do do on Sundays?",
+      "What do do you on Sundays?",
+      "What do you do on Sundays?",
+      "What on Sundays do you do?"
+     ],
+     "answer": "What do you do on Sundays?",
+     "explain": "Cấu trúc hỏi bạn làm gì vào các ngày Chủ Nhật: 'What do you do on Sundays?'."
+    },
+    {
+     "prompt": "Put the words in order: 'music / on / listen / to / Saturdays / I / .'",
+     "options": [
+      "I listen on Saturdays to music.",
+      "On Saturdays listen I to music.",
+      "I to music listen on Saturdays.",
+      "I listen to music on Saturdays."
+     ],
+     "answer": "I listen to music on Saturdays.",
+     "explain": "Trật tự câu: S + V + O + Trạng từ: 'I listen to music on Saturdays.'"
+    },
+    {
+     "prompt": "Put the words in order: 'you / do / on / what / do / Thursdays / ?'",
+     "options": [
+      "What do you do on Thursdays?",
+      "What do you do Thursdays on?",
+      "What you do do on Thursdays?",
+      "What on Thursdays do you do?"
+     ],
+     "answer": "What do you do on Thursdays?",
+     "explain": "Cấu trúc hỏi: 'What do you do on Thursdays?' (Bạn làm gì vào các ngày thứ Năm?)."
+    },
+    {
+     "prompt": "Put the words in order: 'study / I / at / school / .'",
+     "options": [
+      "I at school study.",
+      "I study at school.",
+      "Study I at school.",
+      "At school I study."
+     ],
+     "answer": "I study at school.",
+     "explain": "'I study at school.' (Tôi học ở trường)."
+    },
+    {
+     "prompt": "Put the words in order: 'today / is / it / Friday / .'",
+     "options": [
+      "Today it Friday is.",
+      "Is it Friday today.",
+      "It is Friday today.",
+      "It Friday is today."
+     ],
+     "answer": "It is Friday today.",
+     "explain": "'It is Friday today.' (Hôm nay là thứ Sáu)."
+    },
+    {
+     "prompt": "Put the words in order: 'on / I / do / homework / Saturdays / .'",
+     "options": [
+      "I do on Saturdays homework.",
+      "On Saturdays do I homework.",
+      "I homework do on Saturdays.",
+      "I do homework on Saturdays."
+     ],
+     "answer": "I do homework on Saturdays.",
+     "explain": "'I do homework on Saturdays.' (Tôi làm bài tập về nhà vào các ngày thứ Bảy)."
+    },
+    {
+     "prompt": "Put the words in order: 'day / what / is / it / ?'",
+     "options": [
+      "What day is it?",
+      "What is day it?",
+      "What it is day?",
+      "Day what is it?"
+     ],
+     "answer": "What day is it?",
+     "explain": "'What day is it?' (Hôm nay là thứ mấy?)."
+    },
+    {
+     "prompt": "Put the words in order: 'Sundays / I / at / stay / home / on / .'",
+     "options": [
+      "I stay on Sundays at home.",
+      "I stay at home on Sundays.",
+      "On Sundays stay I at home.",
+      "I at home on Sundays stay."
+     ],
+     "answer": "I stay at home on Sundays.",
+     "explain": "'I stay at home on Sundays.' (Tôi ở nhà vào các ngày Chủ Nhật)."
+    }
+   ]
+  }
+ ]
+}
