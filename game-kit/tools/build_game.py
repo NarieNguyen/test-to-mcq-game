@@ -12,6 +12,11 @@ Thoát với mã khác 0 nếu có LỖI (không được giao file khi còn l�
 """
 import argparse, base64, hashlib, html, io, json, os, re, shutil, subprocess, sys, unicodedata
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8")
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ENGINE = os.path.join(HERE, "..", "engine", "engine.html")
 ANS_SALT = "wtg_v2_2026"          # PHẢI trùng với engine.html
@@ -119,11 +124,17 @@ class Media:
     def _audio(self, path, raw, ext, where):
         if ext == ".mp3":
             return raw, "audio/mpeg"
+        if ext == ".wav":
+            if shutil.which("ffmpeg"):
+                r = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-b:a", "64k", "-f", "mp3", "-"], capture_output=True)
+                if r.returncode == 0 and r.stdout:
+                    return r.stdout, "audio/mpeg"
+            return raw, "audio/wav"
         if shutil.which("ffmpeg"):
             r = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-ac", "1", "-b:a", "64k", "-f", "mp3", "-"], capture_output=True)
             if r.returncode == 0 and r.stdout:
                 return r.stdout, "audio/mpeg"
-        ERR.append("%s: audio %s không phải mp3 và không có ffmpeg để đổi" % (where, ext))
+        ERR.append("%s: audio %s không phải mp3/wav và không có ffmpeg để đổi" % (where, ext))
         return raw, "audio/mpeg"
 
 
@@ -133,6 +144,32 @@ def audio_duration(path):
         try:
             return round(float(r.stdout.strip()), 1)
         except ValueError:
+            pass
+    if not os.path.exists(path):
+        return 0
+    if path.lower().endswith(".wav"):
+        try:
+            import wave
+            with wave.open(path, "rb") as w:
+                return round(w.getnframes() / float(w.getframerate()), 1)
+        except Exception:
+            pass
+    if path.lower().endswith(".mp3"):
+        try:
+            import struct
+            with open(path, "rb") as f:
+                data = f.read()
+            pos = 0
+            while pos < len(data) - 4:
+                if data[pos] == 0xff and (data[pos+1] & 0xe0) == 0xe0:
+                    header = struct.unpack(">I", data[pos:pos+4])[0]
+                    bitrate_idx = (header >> 12) & 0xf
+                    bitrates = [0, 32, 40, 48, 56, 64, 80, 96, 112, 128, 160, 192, 224, 256, 320, 0]
+                    br = bitrates[bitrate_idx]
+                    if br > 0:
+                        return round(len(data) * 8 / (br * 1000), 1)
+                pos += 1
+        except Exception:
             pass
     return 0
 
