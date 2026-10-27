@@ -139,6 +139,11 @@ class Media:
 
 
 def audio_duration(path):
+    try:
+        import miniaudio
+        return round(float(miniaudio.get_file_info(path).duration), 1)
+    except Exception:
+        pass
     if shutil.which("ffprobe"):
         r = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", path], capture_output=True, text=True)
         try:
