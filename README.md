@@ -1,8 +1,12 @@
-# Test to MCQ Game (Skill)
+# Test to MCQ Game (Skill) & Game-Kit v2
 
-Kỹ năng tự động hóa tạo Game ôn tập trắc nghiệm tương tác HTML All-in-One chuẩn **Unit 3 Test** bằng bộ công cụ **`game-kit`**.
+Kỹ năng tự động hóa tạo Game ôn tập trắc nghiệm tương tác HTML All-in-One chuẩn **Unit 3 Test** & **`game-kit-antigravity-v2`**.
 
-Mọi game được tạo ra đều chạy độc lập 100% offline, tích hợp đầy đủ giao diện Sky Blue, thanh ray xe đua 🚗, đồng hồ SVG đếm ngược 90s, cơ chế chấm điểm bảo mật băm `cyrb53`, kiểm tra phân bổ đáp án đều A-D, modal bắt buộc nhập tên học sinh và Bảng vàng VIP Certificate vinh danh.
+Hỗ trợ 2 chế độ:
+- **Chế độ v2 kiểm soát chất lượng (Default)**: Quy trình 5 Phase với 2 Checkpoint dừng nghiệm thu (`STATE.md`, `RULES.md`), mã hóa Base64 chống gian lận, kiến trúc Single-File HTML thuần với âm thanh Web Audio API (0KB ngoại vi).
+- **Chế độ Fast-track**: Tự động hóa liên hoàn toàn bộ quy trình biên dịch và kiểm thử khi có cờ `--fast-track`.
+
+Mọi game được tạo ra đều chạy độc lập 100% offline, tích hợp đầy đủ giao diện Sky Blue, thanh ray xe đua 🚗, đồng hồ SVG đếm ngược 90s, kiểm tra phân bổ đáp án đều A-D, modal bắt buộc nhập tên học sinh và Bảng vàng VIP Certificate vinh danh.
 
 ---
 
